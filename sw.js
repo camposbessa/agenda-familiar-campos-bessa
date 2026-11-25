@@ -1,4 +1,4 @@
-// V13.3 — navegação pela rede; não guardar dados pessoais em cache.
+// V13.4 — navegação pela rede; não guardar dados pessoais em cache.
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
 self.addEventListener('fetch', event => {
