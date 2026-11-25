@@ -1,8 +1,8 @@
-// V12.9: sem cache de dados pessoais nem de respostas Supabase.
+// V13.3 — navegação pela rede; não guardar dados pessoais em cache.
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
 self.addEventListener('fetch', event => {
   if (event.request.mode === 'navigate') {
-    event.respondWith(fetch(event.request));
+    event.respondWith(fetch(event.request, {cache: 'no-store'}));
   }
 });
